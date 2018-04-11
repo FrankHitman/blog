@@ -14,7 +14,7 @@ tags: Django
 2.增加LANGUAGES和LOCALE_PATHS，并且手动在项目根目录下创建locale文件夹
 ![增加LANGUAGES和LOCALE_PATHS](http://upload-images.jianshu.io/upload_images/1909919-6cd98289baffddb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ***
-
+<!--more-->
 ##### 修改template目录下的html文件
 1.每一个html前面都要加上 ` load i18n `，当然如果嫌麻烦，可以把它放在已经存在公共页面里面。
 2.在需要翻译的地方加上` trans ‘XXXXX’ `，XXXXX是需要翻译的文本
@@ -159,3 +159,6 @@ django-admin.py makemessages -l de -e txt
 django-admin.py makemessages -l de -e html,txt -e xml
 ```
 当创建JavaScript翻译目录时，你需要使用特殊的Django域：**not** -e js
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>

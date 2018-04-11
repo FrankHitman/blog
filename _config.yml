@@ -4,11 +4,11 @@
 
 # Site
 title: Frank's Blog
-subtitle:
-description:
-keywords:
+subtitle: Just for fun
+description: Hello world
+keywords: Frank's Blog
 author: Frank
-language:
+language: Chinese
 timezone: Asia/Shanghai
 
 # URL
@@ -72,8 +72,19 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+Plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
 ## Themes: https://hexo.io/themes/
 theme: yilia
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+sitemap:
+  path: sitemap.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

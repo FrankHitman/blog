@@ -10,11 +10,11 @@ tags: Django
 1.中间件中增加一个django.middleware.locale.LocaleMiddleware的中间件，并且它的顺序要靠前，笔者的是放第二个。
 
 ![settings中间件配置截图](http://upload-images.jianshu.io/upload_images/1909919-9f966f52ba3d9bab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+<!--more-->
 2.增加LANGUAGES和LOCALE_PATHS，并且手动在项目根目录下创建locale文件夹
 ![增加LANGUAGES和LOCALE_PATHS](http://upload-images.jianshu.io/upload_images/1909919-6cd98289baffddb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ***
-<!--more-->
+
 ##### 修改template目录下的html文件
 1.每一个html前面都要加上 ` load i18n `，当然如果嫌麻烦，可以把它放在已经存在公共页面里面。
 2.在需要翻译的地方加上` trans ‘XXXXX’ `，XXXXX是需要翻译的文本

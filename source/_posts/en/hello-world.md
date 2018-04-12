@@ -11,7 +11,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 ``` bash
 $ hexo new "My New Post"
 ```
-
+<!--more-->
 More info: [Writing](https://hexo.io/docs/writing.html)
 
 ### Run server
@@ -47,7 +47,7 @@ More info: [Deployment](https://hexo.io/docs/deployment.html)
 Hello {% trans %}
 {% endraw %}
 ```
-- 使用markdown后，引用的一些图片，网上大多使用图床解决，但是hexo支持相对路径引用图片，设置_config.yml中post_asset_folder: true，然后两种引用代码如下：
+- 使用markdown后，引用的一些图片，网上大多使用图床解决，但是hexo支持相对路径引用图片，[官方文档](https://hexo.io/docs/asset-folders.html#Tag-Plugins-For-Relative-Path-Referencing)，设置_config.yml中`post_asset_folder: true`，然后两种引用代码如下：
 ```
 #首页不可以显示，需要点进文章页面才能显示的调用相对路径方式
 ![userhead](userhead.jpg)
@@ -56,7 +56,7 @@ Hello {% trans %}
 ```
 ![userhead](userhead.jpg)
 {% asset_img userhead.jpg userhead %}
-详情见[官方文档](https://hexo.io/docs/asset-folders.html#Tag-Plugins-For-Relative-Path-Referencing)。例如
+- 首页显示文章太长，需要截断，使用`<!--more-->`
 
 
 

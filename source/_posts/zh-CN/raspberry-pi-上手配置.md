@@ -53,3 +53,5 @@ wlan0     Link encap:Ethernet  HWaddr b8:27:eb:42:7c:4c
           RX bytes:104320764 (99.4 MiB)  TX bytes:3293509 (3.1 MiB)
 
 ```
+### 参考资料
+[明明白白玩 Pi 系列之三](https://sspai.com/post/38900)

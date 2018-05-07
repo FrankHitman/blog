@@ -23,7 +23,84 @@ Hello {% trans %}
 ![userhead](userhead.jpg)
 {% asset_img userhead.jpg userhead %}
 - 首页显示文章太长，需要截断，使用`<!--more-->`
+- 如何使Hexo支持流程图和时序图？
+需要安装两个插件 [hexo-filter-flowchart](https://github.com/bubkoo/hexo-filter-flowchart)和[hexo-filter-sequence](https://github.com/bubkoo/hexo-filter-sequence)；并且这两插件都依赖[deep-assign](https://www.npmjs.com/package/deep-assign)`npm install --save deep-assign`
+1. 先说支持流程图
+安装 `npm install --save hexo-filter-flowchart`
+然后在hexo的_config.yml文件末尾新增如下配置：
+```
+flowchart:
+  raphael:   https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js
+  flowchart: https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js
+  options:  drawSVG
 
+```
+新建一个文章键入以下内容：
+```
+# 引用代码后面加上flow
+st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|request
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+
+```
+会生成如下流程图
+```flow
+st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|request
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+```
+2. 再说支持时序图
+安装`npm install --save hexo-filter-sequence`
+然后在hexo的_config.yml文件末尾新增如下配置：
+```
+sequence:
+  webfont: https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js
+  snap:    https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js
+  underscore:  https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js
+  sequence:  https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js
+  css: # optional, the url for css, such as hand drawn theme 
+  options: 
+    theme: simple
+    css_class: 
+
+```
+新建一个文章键入以下内容：
+```
+# 引用代码后面加上sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
+但是却没有如愿生成时序图，根据[这篇博客](http://wewelove.github.io/fcoder/2017/09/06/markdown-sequence/)修改node_modules/hexo-filter-sequence/lib/renderer.js源码第25行`var config = this.config.flowchart;`为`var config = this.config.sequence;`重启hexo，会生成如下时序图
+```sequence
+Alice->Bob: Hello Bob, how are you?
+Note right of Bob: Bob thinks
+Bob-->Alice: I am good thanks!
+```
 ---
 ## 以下内容是搭建成功后Hexo的默认第一篇文章。作为命令的记录没有删除。
 

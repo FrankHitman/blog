@@ -20,6 +20,7 @@ url: https://frankhitman.github.io/
 root: /
 permalink: :lang/:title/
 permalink_defaults:
+  lang:zh-CN
 
 # Directory
 source_dir: source

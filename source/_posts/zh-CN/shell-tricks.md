@@ -2,6 +2,8 @@
 title: shell tricks
 lang: zh-CN
 date: 2018-04-17 11:19:36
+categories:
+    - linux
 tags: shell
 ---
 ##### 一些可能你不知道的 shell 用法和脚本，简单 & 强大

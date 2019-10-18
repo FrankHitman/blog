@@ -2,6 +2,8 @@
 title: flask中自定义exception的使用
 lang: zh-CN
 date: 2018-05-28 16:45:01
+categories:
+    - python
 tags: flask
 ---
 

@@ -2,6 +2,8 @@
 title: Celery learning
 lang: zh-CN
 date: 2018-05-07 11:08:17
+categories:
+    - python
 tags: Celery
 ---
 ## celery基本介绍

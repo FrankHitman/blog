@@ -2,9 +2,10 @@
 title: gin中是如何使用validator?
 lang: zh-CN
 date: 2019-05-18 16:32:17
+categories:
+    - golang
 tags: 
-  - golang
-  - gin
+    - gin
 ---
 
 ## 先介绍下validator
@@ -137,11 +138,26 @@ tag中出现的dive的使用，dive一般用在slice、array、map、嵌套的st
 ```go
 type Test struct {
 	Array []string `validate:"required,gt=0,dive,max=2"`
-    //slice使用gt=0代表field.len()>0，所以[]string{}复合required规则，但是不符合gt=0规则
+    // slice使用gt=0代表field.len()>0，所以[]string{}符合required规则，但是不符合gt=0规则
 	Map map[string]string `validate:"required,gt=0,dive,keys,max=10,endkeys,required,max=2"`
 	// dive代表进入里面一层的验证 例如 a={"b":"c"}中 dive之前的required代表a是必填，大于0，
-	//dive之后出现keys与endkeys之间代表验证map的keys的tag值：max=10，也就是string长度不大于10
-	//后面的自然而然的是验证value了，required 必填并且stirng最大长度是2
+	// dive之后出现keys与endkeys之间代表验证map的keys的tag值：max=10，也就是string长度不大于10
+	// 后面的自然而然的是验证value了，required 必填并且stirng最大长度是2
+}
+```
+required表示字段必须有值，并且不为默认值，例如bool默认值为false、string默认值为""、int默认值为0。如果有些字段是可填的，并且需要满足某些规则的，那么需要使用omitempty；
+```go
+type Test struct {
+	Id         string `form:"charger_id" validate:"omitempty,uuid4"`
+    // Gin 验证URL中参数使用 tag为“form”，此单词会写错为“from” (=_=)。
+    // omitempty可以满足某些变量可以不填，或者填的时候满足一些额外条件，例如max、 min、oneof等
+	Password   string `form:"password" validate:"omitempty,min=5,max=128"`
+}
+```
+oneof自定义枚举值
+```go
+type Test struct {
+	Gender uint8  `json:"gender" binding:"oneof=0 1 2"`
 }
 ```
 字段之间的关系使用如下标签，例如gtfield=CheckIn代表字段值要大于CheckIn字段的值。
@@ -195,7 +211,8 @@ func main() {
 	}
 }
 ```
-自定义struct level的验证，以下例子在验证FirstName与LastName时候，为了确保他们之中必须有一个有值。留一个问题，这里面的json与gin中的json的区别？？？？；同样以下例子同时使用了嵌套的struct，在User中定义了一个指向Address的列表指针，该指针不能为nil，并且指针指向的Address值也能为nil。
+自定义struct level的验证，以下例子在验证FirstName与LastName时候，为了确保他们之中必须有一个有值。
+同样以下例子同时使用了嵌套的struct，在User中定义了一个指向Address的列表指针，该指针不能为nil，并且指针指向的Address值也能为nil。
 ```go
 package main
 import (

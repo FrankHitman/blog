@@ -2,6 +2,8 @@
 title: raspberry-pi 上手配置
 lang: zh-CN
 date: 2018-04-13 17:41:45
+categories:
+    - linux
 tags: raspberry pi
 ---
 

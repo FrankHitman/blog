@@ -1,6 +1,8 @@
 ---
 title: Django如何支持网站多语言切换？
 date: 2018-04-08 19:11:31
+categories:
+    - python
 tags: Django
 ---
 

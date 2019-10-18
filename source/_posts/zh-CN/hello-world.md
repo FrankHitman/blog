@@ -1,6 +1,11 @@
 ---
 title: Hexo的使用
-tag: Hexo
+lang: zh-CN
+date: 2018-05-28 16:45:01
+categories:
+    - nodejs
+tags: 
+    - Hexo 
 ---
 
 ## 一些学习心得

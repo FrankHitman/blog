@@ -1,0 +1,7 @@
+[submodule "yilia"]
+	path = themes/yilia
+	url = git@github.com:FrankHitman/hexo-theme-yilia.git
+	branch = master
+[submodule "photos"]
+	path = photos
+	url = git@github.com:FrankHitman/MarkdownPhotos.git

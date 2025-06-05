@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "4.0.0"
+    "version": "7.3.0"
   },
   "dependencies": {
     "deep-assign": "^2.0.0",
-    "hexo": "4.0.0",
-    "hexo-deployer-git": "1.0.0",
+    "hexo": "^7.3.0",
+    "hexo-deployer-git": "^4.0.0",
     "hexo-filter-flowchart": "^1.0.4",
     "hexo-filter-sequence": "^1.0.3",
     "hexo-generator-archive": "^0.1.4",
@@ -16,10 +16,10 @@
     "hexo-generator-feed": "^1.2.2",
     "hexo-generator-index": "^0.2.0",
     "hexo-generator-json-content": "4.1.6",
-    "hexo-generator-sitemap": "1.2.0",
+    "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^0.2.0",
-    "hexo-renderer-ejs": "^0.3.0",
-    "hexo-renderer-marked": "2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.1",
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.2"
   }

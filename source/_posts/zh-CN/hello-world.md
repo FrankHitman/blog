@@ -27,6 +27,15 @@ Hello {% trans %}
 ```
 ![userhead](userhead.jpg)
 {% asset_img userhead.jpg userhead %}
+
+---2025 update----
+set as absolute path is also effective, including on the home page and on the post detail page.
+
+for example 
+```
+![source/_posts/zh-CN/SQLAlchemy-dirty-write-problem/95921740391336_.pic.jpg](/zh-CN/SQLAlchemy-dirty-write-problem/95921740391336_.pic.jpg)
+```
+
 - 首页显示文章太长，需要截断，使用`<!--more-->`
 - 如何使Hexo支持流程图和时序图？
 需要安装两个插件 [hexo-filter-flowchart](https://github.com/bubkoo/hexo-filter-flowchart)和[hexo-filter-sequence](https://github.com/bubkoo/hexo-filter-sequence)；并且这两插件都依赖[deep-assign](https://www.npmjs.com/package/deep-assign)`npm install --save deep-assign`

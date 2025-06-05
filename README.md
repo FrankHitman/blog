@@ -395,6 +395,9 @@ npm install
 # 安装 nvm（如果还没有安装）
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 ```
+
+通过 brew 在macOS上安装 nvm，并且设置环境变量。
+```
 MacBook-Pro:blog frank$ brew install nvm
 ==> Downloading https://ghcr.io/v2/homebrew/core/nvm/manifests/0.40.1
 ################################################################################################################################# 100.0%
@@ -429,10 +432,7 @@ Bash completion has been installed to:
 
 ```
 MacBook-Pro:blog frank$ vi ~/.bash_profile 
-MacBook-Pro:blog frank$ 
-MacBook-Pro:blog frank$ 
 MacBook-Pro:blog frank$ source ~/.bash_profile 
-MacBook-Pro:blog frank$ 
 MacBook-Pro:blog frank$ nvm
 
 Node Version Manager (v0.40.1)
@@ -537,6 +537,8 @@ Note:
 
 ```
 
+安装 nodejs 18 版本，其实是依赖包的问题，暂且记一下管理nodejs的方法。
+```bash
 # 安装并使用 Node.js 18 LTS
 nvm install 18
 nvm use 18
@@ -545,22 +547,6 @@ MacBook-Pro:blog frank$ node -v
 v18.20.8
 ```
 
-4. **修改部署配置**
-让我检查一下您的部署配置：
-
-
-Read file: _config.yml
-建议按以下步骤解决：
-
-1. **降级 Node.js 版本**（这是最关键的步骤）：
-```bash
-# 安装 nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-
-# 重新打开终端后执行：
-nvm install 18
-nvm use 18
-```
 
 2. **清理并重新安装**：
 ```bash

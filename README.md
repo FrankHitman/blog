@@ -24,6 +24,11 @@
 ```bash
 hexo new post "文章标题"
 ```
+指定語言/目錄
+```
+hexo new post "test-article" --path zh-CN/test-article
+hexo new post "中文标题" --lang zh-CN
+```
 
 2. **本地预览**：
 ```bash
